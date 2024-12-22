@@ -1,0 +1,26 @@
+
+<section class="inputsection">
+    <form [formGroup]="registerForm" id="register" (ngSubmit)="addUser()">
+        <div>
+            <label *ngIf="registerForm.controls.firstname.errors?.['wrongName']">*</label>
+            <input type="text" placeholder="Firstname" formControlName="firstname"/>
+        </div>
+        <div>
+            <label *ngIf="registerForm.controls.lastname.errors?.['wrongName']">*</label>
+            <input type="text" placeholder="Lastname" formControlName="lastname"/>
+        </div>
+        <div>
+            <label *ngIf="registerForm.controls.username.errors?.['required']">*</label>
+            <input type="text" placeholder="UserName" formControlName="username"/>
+        </div>
+        <div>
+            <label *ngIf="registerForm.controls.password.errors?.['wrongPassword']">*</label>
+            <input type="password" placeholder="Password" formControlName="password"/>
+        </div>
+        <input type="text" placeholder="Email" formControlName="email" />
+        <div>
+            <button class="button" type="submit"[disabled]="!registerForm.valid">Register</button>
+        </div>
+        <p>Go <a routerLink="/login">back</a> to login page</p>
+    </form>
+</section>

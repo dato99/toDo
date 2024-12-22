@@ -1,0 +1,10 @@
+<div class="form">
+<form #toDoForm="ngForm">
+    <input type="text" 
+           placeholder="Enter task here" 
+           [(ngModel)]="activity" 
+           name="activity" 
+           required/>
+    <button [disabled]="!toDoForm.valid"(click)="addDescription()">Add</button>
+</form>
+</div>

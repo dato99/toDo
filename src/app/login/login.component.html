@@ -1,0 +1,9 @@
+<div id="login">
+    <form #loginForm="ngForm">
+        <input type="text" placeholder="UserName"[(ngModel)]="username" name="username" required/>
+        <br>
+        <input type="text" placeholder="Password" [(ngModel)]="password" name="password" required/>
+    </form>
+    <a [hidden]="!loginForm.valid" id="falsebutton" routerLink="/todoes">Login</a>
+    <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+</div>

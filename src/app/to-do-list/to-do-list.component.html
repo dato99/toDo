@@ -1,0 +1,17 @@
+<table *ngIf="toDosService.toDoList.length>0">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>description</th>
+            <th>Done</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let toDo of toDosService.toDoList">
+            <td>{{toDo.id}}</td>
+            <td>{{toDo.activity}}</td>
+            <td><input type="checkbox" [(ngModel)]="toDo.done"(change)="updateActivity(toDo)"/></td>
+            <td class="buttoncell"><button (click)="deleteActivity(toDo)">delete</button></td>
+        </tr>
+    </tbody>
+</table>
